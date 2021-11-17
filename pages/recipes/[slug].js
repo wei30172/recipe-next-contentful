@@ -7,7 +7,7 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 })
 
-export const getStaticPaths = async () => {
+export async function getStaticPaths() {
   const res = await client.getEntries({ 
     content_type: "recipe"
   })
@@ -23,7 +23,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
     content_type: 'recipe',
     'fields.slug': params.slug // unique
