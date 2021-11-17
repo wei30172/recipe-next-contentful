@@ -15,7 +15,7 @@ export const getStaticPaths = async () => {
   const paths = res.items.map(item => {
     return {
       params: { slug: item.fields.slug },
-      revalidate: 1
+      revalidate: 10 // 1s
     }
   })
   return {
