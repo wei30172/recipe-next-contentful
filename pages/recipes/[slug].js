@@ -15,7 +15,6 @@ export const getStaticPaths = async () => {
   const paths = res.items.map(item => {
     return {
       params: { slug: item.fields.slug },
-      revalidate: 10 // 1s
     }
   })
   return {
@@ -31,7 +30,8 @@ export const getStaticProps = async ({ params }) => {
   }) // return an array
 
   return {
-    props: { recipe: items[0] }
+    props: { recipe: items[0] },
+    revalidate: 1 // 1s
   }
 }
 

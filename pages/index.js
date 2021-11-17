@@ -1,7 +1,7 @@
 import { createClient } from 'contentful'
 import RecipeCard from '../components/RecipeCard';
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 
   return {
     props: { recipes: res.items },
-    revalidate: 10 // 1s
+    revalidate: 1 // 1s
   }
 }
 
