@@ -1,5 +1,4 @@
 # [recipe-next-contentful](https://recipe-next-contentful-three.vercel.app/)
-Test email & password : test15@testnet.co.us / test1234
 
 # Getting Started with Create React App
 
